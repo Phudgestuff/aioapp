@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 @font-face {
     font-family: "kode";
     src: url('../fonts/kode.ttf') format('truetype');
@@ -18,7 +20,7 @@ $background: rgb(11, 20, 25);
 }
 
 body {
-    background: linear-gradient(black, lighten($background, 10%));
+    background: linear-gradient(black, color.scale($background, $lightness: 10%));
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 100vh;

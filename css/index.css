@@ -1,3 +1,53 @@
+@font-face {
+  font-family: "kode";
+  src: url("../fonts/kode.ttf") format("truetype");
+}
+* {
+  color: white;
+  font-family: "kode", sans-serif;
+}
 
+body {
+  background: linear-gradient(black, rgb(25.4833333333, 46.3333333333, 57.9166666667));
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+#title {
+  position: absolute;
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+  top: 75px;
+}
+
+#search {
+  position: absolute;
+  font-family: "kode", sans-serif;
+  color: white;
+  background: transparent;
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+  top: 200px;
+  width: 500px;
+  height: 50px;
+  font-size: 40px;
+  border: none;
+  font-weight: bold;
+}
+#search:focus {
+  outline: none;
+}
+
+#prompt {
+  position: absolute;
+  top: 200px;
+  right: calc(50% + 250px + 10px);
+  font-size: 40px;
+  font-weight: bold;
+}
 
 /*# sourceMappingURL=index.css.map */
