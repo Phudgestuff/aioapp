@@ -1,6 +1,7 @@
-document.addEventListener("keydown", (event) => {
-    // check for ctrl + h
-    if (event.ctrlKey && event.code === "KeyH") {
-        console.log("Ctrl+H pressed");
-    }
+// ensure that search box is not unfocused
+document.addEventListener('click', () => {
+    document.getElementById("search").focus();
 });
+window.addEventListener('focus', () => {
+    document.getElementById('search').focus();
+})
