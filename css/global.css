@@ -1,0 +1,26 @@
+@font-face {
+  font-family: "kode";
+  src: url("../fonts/kode.ttf") format("truetype");
+}
+* {
+  color: white;
+  font-family: "kode", sans-serif;
+}
+
+body {
+  background: linear-gradient(black, rgb(26.5833333333, 48.3333333333, 60.4166666667));
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+#title {
+  position: absolute;
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+  top: 75px;
+}
+
+/*# sourceMappingURL=global.css.map */

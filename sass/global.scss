@@ -1,0 +1,31 @@
+@font-face {
+    font-family: "kode";
+    src: url('../fonts/kode.ttf') format('truetype');
+}
+
+@mixin centre-hori($top) {
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+    top: $top;
+}
+
+$background: rgb(11, 20, 25);
+
+* {
+    color: white;
+    font-family: "kode", sans-serif;
+}
+
+body {
+    background: linear-gradient(black, lighten($background, 10%));
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+#title {
+    position: absolute;
+    @include centre-hori(75px);
+}
