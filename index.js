@@ -1,18 +1,42 @@
-const { app, BrowserWindow } = require("electron");
+const { app, BrowserWindow, screen, ipcMain } = require("electron");
+const path = require('path');
+const sortJson = require('./scripts/sortJsonPaths.js')
 
 function createWindow() {
+
+    // get mouse position
+    const mousePoint = screen.getCursorScreenPoint();
+
+    // get the display where the mouse is
+    const display = screen.getDisplayNearestPoint(mousePoint);
+
+    const winWidth = 1600;
+    const winHeight = 1000;
+
+    // calculate centred position
+    const x = display.bounds.x + (display.bounds.width - winWidth) / 2;
+    const y = display.bounds.y + (display.bounds.height - winHeight) / 2;
+
     const win = new BrowserWindow({
-        width: 800,
-        height: 600,
+        x,
+        y,
+        width: 1600,
+        height: 1000,
         webPreferences: {
-            nodeIntegration: true,
-            contextIsolation: false
+            preload: path.join(__dirname, 'preload.js'),
+            nodeIntegration: false,
+            contextIsolation: true
         }
     });
 
     win.loadFile("index.html");
     win.setMenu(null);
-    win.webContents.openDevTools(); // open DevTools for debugging
+    //win.webContents.openDevTools(); // open DevTools for debugging
+
+    // handler for retrieve, returns sorted list of paths
+    ipcMain.handle('retrieve', (event, string) => {
+        return sortJson(string);
+    });
 }
 
 app.whenReady().then(() => {

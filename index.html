@@ -3,12 +3,24 @@
 <head>
     <title>Start</title>
     <link rel="stylesheet" href="./css/global.css">
-    <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
     <h1 id="title">Hugo's app. Use wisely</h1>
     <input id="search">
     <div id="prompt">></div>
+    <div id="resultContainer"></div>
+    <div id="helpMenu">
+        <h3>Available commands:</h3>
+        <ul>
+            <li><b>Help</b> - Provides this menu</li>
+            <li><b>Email</b> - View your emails</li>
+            <li><b>Discord</b> - View discord messages</li>
+            <li><b>Exit</b> - Exit this application</li>
+            <li><b>Return</b> - Return to main menu</li>            
+        </ul>
+    </div>
+    <filter id="blurCover"></filter>
+
 </body>
-<script src="./scripts/index_renderer.js"></script>
+<script type="module" src="./scripts/index_renderer.js"></script>
 </html>

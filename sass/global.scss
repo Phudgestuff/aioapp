@@ -17,6 +17,7 @@ $background: rgb(11, 20, 25);
 * {
     color: white;
     font-family: "kode", sans-serif;
+    user-select: none;
 }
 
 body {
@@ -30,4 +31,75 @@ body {
 #title {
     position: absolute;
     @include centre-hori(75px);
+}
+
+$prompt-width: 500px;
+
+#search {
+    position: absolute;
+    font-family: "kode", sans-serif;
+    color: white;
+    background: transparent;
+    @include centre-hori(200px);
+    width: $prompt-width;
+    height: 50px;
+    font-size: 40px;
+    border: none;
+    font-weight: bold;
+    cursor: default;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+#prompt {
+    position: absolute;
+    top: 200px; // same height as #search
+    right: calc(50% + ($prompt-width / 2) + 10px);
+    font-size: 40px;
+    font-weight: bold;
+    transition: all 0.2s ease-out;
+}
+
+.menuEntry {
+    position: absolute;
+    font-family: "kode", sans-serif;
+    color: white;
+    background: transparent;
+    @include centre-hori(200px);
+    width: $prompt-width;
+    height: 50px;
+    font-size: 40px;
+    //opacity: 0;
+    border: none;
+}
+
+#blurCover {
+    position: fixed;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.01);
+    z-index: 9;
+    backdrop-filter: none;
+    transition: backdrop-filter 0.5s ease;
+}
+
+#helpMenu {
+    position: absolute;
+    @include centre-hori(100px);
+    min-width: 500px;
+    width: 30vw;
+    height: 80vh;
+    background-color: white;
+    opacity: 0;
+    z-index: 10;
+    transition: opacity 0.5s ease;
+    border-radius: 25px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: grey;
+    background: linear-gradient(color.scale(black, $lightness: 10%), color.scale($background, $lightness: 20%));
+    padding: 10px 10px 10px 10px;
 }

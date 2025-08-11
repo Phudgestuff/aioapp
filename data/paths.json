@@ -1,0 +1,4 @@
+[
+    ["Other", "p:./pages/other.html"],
+    ["Help", "c:help"]
+]
